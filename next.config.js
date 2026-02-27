@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: '/juscleanit-website',
+  assetPrefix: '/juscleanit-website/',
   images: {
     unoptimized: true,
     formats: ['image/avif', 'image/webp'],
