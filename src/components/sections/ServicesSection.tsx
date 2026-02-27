@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -89,7 +90,7 @@ export function ServicesSection() {
                     </li>
                   ))}
                 </ul>
-                <a
+                <Link
                   href={service.href}
                   className="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 hover:text-primary-700 group"
                 >
@@ -97,7 +98,7 @@ export function ServicesSection() {
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </Card>
           ))}

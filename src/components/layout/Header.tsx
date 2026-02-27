@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { clsx } from 'clsx';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 
 /* ─────────────────────────────────────────────
@@ -174,7 +175,7 @@ export function Header() {
     >
       <div className="container-wide flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group" aria-label="JusCleanIt Home">
+        <Link href="/" className="flex items-center gap-2 group" aria-label="JusCleanIt Home">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center shadow-md group-hover:shadow-glow-primary transition-shadow">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M12 2L14.09 8.26L20 9.27L15.55 13.97L16.91 20L12 16.9L7.09 20L8.45 13.97L4 9.27L9.91 8.26L12 2Z" fill="white" />
@@ -186,12 +187,12 @@ export function Header() {
           )}>
             Jus<span className="text-secondary-400">CleanIt</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={getHref(item)}
               onClick={(e) => handleNavClick(e, item)}
@@ -219,7 +220,7 @@ export function Header() {
                   aria-hidden="true"
                 />
               )}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -285,7 +286,7 @@ export function Header() {
       >
         <div className="container-wide py-4 space-y-1 bg-white rounded-b-2xl shadow-medium mt-2">
           {navigation.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={getHref(item)}
               onClick={(e) => handleNavClick(e, item)}
@@ -299,7 +300,7 @@ export function Header() {
               aria-current={isActive(item) ? 'true' : undefined}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
           <div className="pt-3 border-t border-neutral-100">
             <Button href="/booking" variant="primary" fullWidth>

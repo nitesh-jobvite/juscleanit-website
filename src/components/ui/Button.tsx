@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 import { ButtonHTMLAttributes, AnchorHTMLAttributes, forwardRef } from 'react';
+import Link from 'next/link';
 
 type ButtonVariant = 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost' | 'white';
 type ButtonSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -72,11 +73,28 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     );
 
     if ('href' in rest && rest.href) {
+      const { href, ...anchorRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+      const isInternalLink = href.startsWith('/') && !href.startsWith('//');
+
+      if (isInternalLink) {
+        return (
+          <Link
+            ref={ref as React.Ref<HTMLAnchorElement>}
+            href={href}
+            className={classes}
+            {...(anchorRest as Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>)}
+          >
+            {content}
+          </Link>
+        );
+      }
+
       return (
         <a
           ref={ref as React.Ref<HTMLAnchorElement>}
           className={classes}
-          {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}
+          href={href}
+          {...anchorRest}
         >
           {content}
         </a>

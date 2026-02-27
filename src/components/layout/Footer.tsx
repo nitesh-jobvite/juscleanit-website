@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 
 const footerLinks = {
@@ -59,7 +60,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-5">
+            <Link href="/" className="flex items-center gap-2 mb-5">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M12 2L14.09 8.26L20 9.27L15.55 13.97L16.91 20L12 16.9L7.09 20L8.45 13.97L4 9.27L9.91 8.26L12 2Z" fill="white" />
@@ -68,7 +69,7 @@ export function Footer() {
               <span className="font-heading text-xl font-bold text-white">
                 Jus<span className="text-secondary-400">CleanIt</span>
               </span>
-            </a>
+            </Link>
             <p className="text-neutral-400 text-body max-w-sm mb-4">
               Community, Kindness, & Value. Delivering the best cleaning experience based on honesty, reliability and value.
             </p>
@@ -111,9 +112,9 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-neutral-400 hover:text-white transition-colors text-sm">
+                  <Link href={link.href} className="text-neutral-400 hover:text-white transition-colors text-sm">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -124,9 +125,9 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-neutral-400 hover:text-white transition-colors text-sm">
+                  <Link href={link.href} className="text-neutral-400 hover:text-white transition-colors text-sm">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -137,9 +138,9 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-neutral-400 hover:text-white transition-colors text-sm">
+                  <Link href={link.href} className="text-neutral-400 hover:text-white transition-colors text-sm">
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -152,12 +153,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} JusCleanIt Cleaning Co. All Rights Are Reserved.
           </p>
           <div className="flex gap-6">
-            <a href="/privacy" className="text-neutral-500 hover:text-white text-sm transition-colors">
+            <Link href="/privacy" className="text-neutral-500 hover:text-white text-sm transition-colors">
               Privacy Policy
-            </a>
-            <a href="/contact" className="text-neutral-500 hover:text-white text-sm transition-colors">
+            </Link>
+            <Link href="/contact" className="text-neutral-500 hover:text-white text-sm transition-colors">
               Cancellation Policy
-            </a>
+            </Link>
             <a href="/sitemap.xml" className="text-neutral-500 hover:text-white text-sm transition-colors">
               Sitemap
             </a>

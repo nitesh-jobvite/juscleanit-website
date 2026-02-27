@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true,
   basePath: '/juscleanit-website',
   assetPrefix: '/juscleanit-website/',
   images: {
